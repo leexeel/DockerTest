@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  phptest:
+    image: webdevops/php-apache:latest
+  ports: 
+    - 80:80
+  volumes:
+    - .:/var/www/html
