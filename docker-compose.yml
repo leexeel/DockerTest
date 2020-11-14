@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   phptest:
-    image: webdevops/php-apache:latest
+    image: php-apache:latest
     container_name: phpweb1
     ports: 
       - "8080:80"
