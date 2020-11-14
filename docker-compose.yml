@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: 'init1234'
       MYSQL_ROOT_PASSWORD: 'init1234'
     ports:
-      - 3306:3306
+      - 3307:3306
     expose:
       - 3306
     volumes:
