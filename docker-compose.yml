@@ -4,7 +4,7 @@ services:
   phptest:
     image: webdevops/php-apache:latest
     container_name: phpweb1
-  ports: 
-    - "8080:80"
-  volumes:
-    - .:/var/www/html
+    ports: 
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
