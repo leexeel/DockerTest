@@ -1,8 +1,0 @@
-version: "1.27.4"
-
-services:
-  image: php-apache:latest
-  ports:
-    - 80:80
-  volumes:
-    - .:/var/www/html
