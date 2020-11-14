@@ -3,7 +3,9 @@ version: '3.4'
 services:
   phptest:
     #image: php:7.4-apache
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: phpweb1
     ports: 
       - 801:80
