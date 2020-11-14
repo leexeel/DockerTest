@@ -2,9 +2,31 @@ version: '3.4'
 
 services:
   phptest:
-    image: php-apache:latest
+    #image: php:7.4-apache
+    build: .
     container_name: phpweb1
     ports: 
-      - "8080:80"
+      - 801:80
+    #command: "docker-php-ext-install mysqli && docker-php-ext-enable mysqli && apachectl restart"
     volumes:
       - .:/var/www/html
+    links:
+      - "mysql"
+    #command: docker-php-ext-install mysqli #&& docker-php-ext-enable mysqli
+  mysql:
+    image: mysql:latest
+    container_name: mysql1
+    environment:
+      MYSQL_DATABASE: 'iot'
+      MYSQL_USER: 'iot_user'
+      MYSQL_PASSWORD: 'init1234'
+      MYSQL_ROOT_PASSWORD: 'init1234'
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  db:
