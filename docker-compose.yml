@@ -3,7 +3,8 @@ version: '3.4'
 services:
   phptest:
     image: webdevops/php-apache:latest
+    container_name: phpweb1
   ports: 
-    - 80:80
+    - "8080:80"
   volumes:
     - .:/var/www/html
